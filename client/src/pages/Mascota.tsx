@@ -1,27 +1,26 @@
 import { useForm } from 'react-hook-form'
-import { createUsuario, User } from '../api/usuario.api'
-import {Label} from '../components/Label'
+import { Pet, createMascota } from '../api/mascota.api'
+import { Label } from '../components/Label'
 
-export function Usuario() {
+export function Mascota() {
 
   const { register, handleSubmit, reset } = useForm()
-  
+
   const onSubmit = handleSubmit(async data => {
 
-    const usuarioData: User = {
-      nombre_usuario: data.nombre,
-      apellido_usuario: data.apellido,
-      telefono: data.telefono,
-      direccion: data.direccion,
-      dni: data.dni,
-      contraseña: data.contraseña,
+    const mascotaData: Pet = {
+      nombre_mascota: data.nombre,
+      especie: data.especie,
+      raza: data.raza,
+      genero: data.genero,
+      edad: data.edad,
     }
 
-    const res = await createUsuario(usuarioData);
+    const res = await createMascota(mascotaData);
+
     console.log(res)
 
-    reset();
-
+    reset()
   })
 
   return (
@@ -41,8 +40,8 @@ export function Usuario() {
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" onSubmit={onSubmit}>
             <div>
-              <Label htmlFor="nombre">
-                Nombre
+              <Label htmlFor='nombre'>
+                Nombre de la Mascota
               </Label>
               <div className="mt-2">
                 <input
@@ -56,83 +55,61 @@ export function Usuario() {
             </div>
 
             <div>
-              <Label htmlFor='apellido'>
-                Apellido
+              <Label htmlFor='especie'>
+                Especie de la mascota
               </Label>
               <div className="mt-2">
                 <input
-                  id="apellido"
+                  id="especie"
                   type="text"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-3"
-                  {...register("apellido", { required: true })}
+                  {...register("especie", { required: true })}
                 />
               </div>
             </div>
 
             <div>
-              <Label htmlFor='telefono'>
-                Teléfono
+              <Label htmlFor='raza'>
+                Raza de la Mascota
               </Label>
               <div className="mt-2">
                 <input
-                  id="telefono"
+                  id="raza"
                   type="text"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-3"
-                  {...register("telefono", { required: true })}
+                  {...register("raza", { required: true })}
                 />
               </div>
             </div>
 
             <div>
-              <Label htmlFor='direccion'>
-                Dirección
+              <Label htmlFor='genero'>
+                Genero de la Mascota
               </Label>
               <div className="mt-2">
                 <input
-                  id="direccion"
+                  id="genero"
                   type="text"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-3"
-                  {...register("direccion", { required: true })}
+                  {...register("genero", { required: true })}
                 />
               </div>
             </div>
 
             <div>
-              <Label htmlFor='dni'>
-                DNI
+              <Label htmlFor='edad'>
+                Edad de la Mascota
               </Label>
               <div className="mt-2">
                 <input
-                  id="dni"
+                  id="edad"
                   type="text"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-3"
-                  {...register("dni", { required: true })}
-                />
-              </div>
-            </div>
-
-            <div>
-              <div className="flex items-center justify-between">
-                <label htmlFor="contraseña" className="block text-sm font-medium leading-6 text-gray-900">
-                  Contraseña
-                </label>
-                <div className="text-sm">
-                  <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                    ¿Olvidaste tu contraseña?
-                  </a>
-                </div>
-              </div>
-              <div className="mt-2">
-                <input
-                  id="contraseña"
-                  type="password"
-                  required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-3"
-                  {...register("contraseña", { required: true })}
+                  {...register("edad", { required: true })}
                 />
               </div>
             </div>
@@ -140,15 +117,15 @@ export function Usuario() {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 px-3"
+                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Sign in
               </button>
             </div>
           </form>
+
         </div>
       </div>
     </>
   )
 }
-
