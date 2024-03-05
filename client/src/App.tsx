@@ -3,10 +3,12 @@ import { Usuario } from './pages/Usuario'
 import { Mascota } from './pages/Mascota'
 import { ListUsuario } from './pages/ListUsuario'
 import { ListMascota } from './pages/ListMascota'
+import {Navbar} from './components/Navbar'
 
 function App() {
   return (
     <Router>
+      <Navbar></Navbar>
       <Routes>
         <Route path='/registrar-usuario' element={<Usuario />} />
         <Route path='/listar-usuario' element={<ListUsuario />} />

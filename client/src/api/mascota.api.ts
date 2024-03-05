@@ -14,4 +14,5 @@ const mascotaApi = axios.create({
 
 export const getAllMascota = () => mascotaApi.get("/");
 
-export const createMascota = (mascota:Pet):Promise<AxiosResponse<Pet>> => mascotaApi.post("/", mascota);
+export const createMascota = (mascota: Pet): Promise<AxiosResponse<Pet>> =>
+  mascotaApi.post("/", mascota);
