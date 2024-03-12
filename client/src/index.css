@@ -5,3 +5,17 @@
 body{
   background: rgb(224, 164, 54);
 }
+
+@keyframes scroll{
+  0%{
+    transform: translateX(0);
+  }
+
+  100%{
+    transform: translateX(calc(-350px * 6 - 1rem * 6));
+  }
+}
+
+.animate-scroll{
+  animation: scroll 25s linear infinite;
+}
