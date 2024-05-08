@@ -11,7 +11,7 @@ class MascotaSerializer(serializers.ModelSerializer):
         model = Mascota
         fields = '__all__'
 
-class PropietarioSerializer(serializers.ModelSerializer):
+class PropietarioSerializer(serializers.ModelSerializer):   
     class Meta:
         model = PropietarioMascota
         fields = '__all__'

@@ -30,3 +30,9 @@ class PropietarioMascota(models.Model):
     id_propietario = models.AutoField(primary_key=True)
     id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     id_mascota = models.ForeignKey(Mascota, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'propietario'
+
+    def __str__(self):
+        return self.id_usuario.nombre_usuario + self.id_mascota.nombre_mascota

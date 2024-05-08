@@ -6,10 +6,10 @@ interface Propietario {
 }
 
 const apiPropietario = axios.create({
-  baseURL: "http://127.0.0.1:8000/petwell/api/mascota/",
+  baseURL: "http://127.0.0.1:8000/petwell/api/propietario/",
 });
 
-export const getPropietario = () => apiPropietario.get("/");
+export const getAllPropietario = () => apiPropietario.get("/");
 
 export const postPropietario = (
   propietario: Propietario
