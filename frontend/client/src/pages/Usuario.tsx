@@ -34,7 +34,7 @@ export function Usuario() {
             alt="Your Company"
           />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Sign in to your account
+            Registro de Usuario
           </h2>
         </div>
 
@@ -120,11 +120,6 @@ export function Usuario() {
                 <label htmlFor="contraseña" className="block text-sm font-medium leading-6 text-gray-900">
                   Contraseña
                 </label>
-                <div className="text-sm">
-                  <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                    ¿Olvidaste tu contraseña?
-                  </a>
-                </div>
               </div>
               <div className="mt-2">
                 <input

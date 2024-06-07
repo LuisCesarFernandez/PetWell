@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 export function Footer() {
     return (
-        <footer className="fixed bottom-0 w-full">
+        <footer>
             <div className="bg-blue-300">
                 <center>
                     <div className="container mx-auto item-center">

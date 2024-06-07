@@ -1,2 +1,9 @@
-venv
-__pycache__
+#Ignore the virtual environment
+backend/venv/
+
+#Ignore Python cache files
+backend/backpetwell/__pycache__/
+backend/API_PETWELL/__pycache__/
+
+#Ignore Node Modules
+frontend/client/node_modules/

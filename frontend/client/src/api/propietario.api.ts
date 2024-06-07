@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-interface Propietario {
+export interface Propiet {
   id_usuario: number;
   id_mascota: number;
 }
@@ -12,5 +12,5 @@ const apiPropietario = axios.create({
 export const getAllPropietario = () => apiPropietario.get("/");
 
 export const postPropietario = (
-  propietario: Propietario
-): Promise<AxiosResponse<Propietario>> => apiPropietario.post("/", propietario);
+  propietario: Propiet
+): Promise<AxiosResponse<Propiet>> => apiPropietario.post("/", propietario);
